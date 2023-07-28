@@ -1,0 +1,9 @@
+{% extends '_base.html' %}
+{% block content %}
+<h1 class="car_list" >Cars List</h1>
+<hr>
+{% for car in object_list %}
+<a href="{% url 'car_detail' car.id %}"><h2 class="car_list_h1">{{car.name}}</h2></a>
+{% endfor %}
+<a class="button_add" href="{% url 'car_create' %}"><input type="button" value="Add New Car"></a>
+{% endblock %}

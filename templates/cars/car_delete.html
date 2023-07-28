@@ -1,0 +1,10 @@
+{% extends '_base.html' %}
+{% block content %}
+<form style="display: inline;" method="post">
+    {% csrf_token %}
+    <h3>Are you sure you want to delete {{car.name}}</h3>
+    <input type="submit" value="Yes">
+</form>
+<a style="display: inline;" href="{% url 'car_detail' car.id %}"><input type="button" value="No"></a>
+
+{% endblock %}
